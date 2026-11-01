@@ -1,0 +1,11 @@
+# Node dependencies
+node_modules/
+
+# Database files
+cupcakes.db
+*.sqlite
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
