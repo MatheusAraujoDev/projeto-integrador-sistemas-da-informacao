@@ -7,10 +7,14 @@ const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
 app.get('/', controller.renderLandingPage);
 app.get('/api/cupcakes', controller.getCupcakes);
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+// Run local server if not on Vercel
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
